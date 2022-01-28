@@ -45,7 +45,7 @@ exports.mapCabCity = function (req, res) {
                        }
                        //logger.info("The New Cab History Array = "+JSON.stringify(cabHistoryArr))
                        cabHistoryDB.saveCabHistoryArray(cabHistoryArr).then((result) => {
-                           resolve(result);
+                           resolve(cabHistory);
                        },
                        (error) => {
                            reject(error)

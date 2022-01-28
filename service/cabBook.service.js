@@ -62,7 +62,10 @@ exports.bookCab = function (req, res) {
 
                             cabHistoryDB.saveCabHistory(cabHistory).then((result) => {
                                 logger.info("after BOOKING = "+JSON.stringify(result))
-                                resolve(result);
+                                resolve({
+                                    message: "Booking Confirmed",
+                                    statusCode: 200
+                                });
                             },
                             (error) => {
                                 reject(error)
