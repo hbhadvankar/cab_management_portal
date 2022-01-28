@@ -42,6 +42,5 @@ app.use('/v1/cab', addHeaders, cabCityStateRouter);
 app.use('/v1/cab', addHeaders, cabBookRouter);
 
 http.createServer(app).listen(serverPort, function () {
-  logger.info('Swagger-ui is available on http://localhost:%d/docs', serverPort);
   logger.info("Express server listening on port " + serverPort);
 });
