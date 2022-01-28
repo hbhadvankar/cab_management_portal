@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "eaa0a9ab-1975-430e-b24a-62f829dc6391",
+		"name": "Cab_Management_APIs",
+		"description": "This Collection contains all the APIs related to Cab Management.\n\n1. Register Cab\n2. Onboard City\n3. Assiciate Cab and City.\n4. Book a Cab\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register Cab",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Maruti\",\n    \"type\":\"hachback\",\n    \"color\":\"white\",\n    \"cabNumber\":\"MH12AA1113\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/cab/registerCab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cab",
+						"registerCab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register City",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Pune\",\n    \"state\":\"Maharashtra\",\n    \"country\":\"India\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/city/registerCity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"city",
+						"registerCity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Map Cab And City",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n    \"cabId\": \"61f2c6f33edb4c1be91d7124\",\n    \"cityId\": \"61f2c6f78bc9ba71a0a9d995\",\n    \"state\": \"IDLE\"\n    },{\n    \"cabId\": \"61f2cc7a4ef6a015c297635c\",\n    \"cityId\": \"61f2ccb88bc9ba71a0a9dbba\",\n    \"state\": \"IDLE\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/cab/mapCabCity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cab",
+						"mapCabCity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cabs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/cab/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cab",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get City",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/city/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"city",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Cab",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fromcity\":\"61f2c6f78bc9ba71a0a9d995\",\n    \"tocity\":\"61f2ccb88bc9ba71a0a9dbba\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/cab/bookCab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cab",
+						"bookCab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "End Trip",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookingId\":\"61f32e8152ca51c97dc054bd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/cab/endTrip",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"cab",
+						"endTrip"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
